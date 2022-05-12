@@ -7,18 +7,19 @@
 //Я плохо прочел условия задачи, в итоге сделал динамический массив, который выводит все четные цифры
 int [] numbers = new int [2];  
 Console.WriteLine("Введите N-е количество чисел");
-Console.WriteLine("Чтоыб закончит ввод, нажмите на пробел");
+Console.WriteLine("Для завершения операции введите пробел");
 try
 {
     for (int i = 0; i < numbers.Length; i++)
     {
-        Array.Resize (ref numbers, numbers.Length + i);
+        Array.Resize (ref numbers, numbers.Length + 1);
         int number = Convert.ToInt32(Console.ReadLine());
         numbers[i] = number; 
     }
 }
 catch
 {
+    Array.Resize (ref numbers, numbers.Length - 3);
 }
 finally
 {
@@ -32,3 +33,7 @@ for (int i = 0; i < numbers.Length; i++)
         }
     }    
 }
+//Для печати массива:
+//string arraystring = string.Join (", ", numbers);
+//System.Console.WriteLine();
+//System.Console.WriteLine(arraystring);
